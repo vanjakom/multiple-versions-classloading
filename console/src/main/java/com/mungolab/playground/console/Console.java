@@ -19,13 +19,13 @@ public class Console {
         try {
             URL urlV0 = new URL(new URL("file:"), "./sample-client-v0/target/sample-client-v0-1.0-SNAPSHOT.jar");
             URL urlV1 = new URL(new URL("file:"), "./sample-client-v1/target/sample-client-v1-1.0-SNAPSHOT.jar");
-            URL muturalDependency = new URL(new URL("file://"), "./mutural-dependency/target/mutural-dependency-1.0-SNAPSHOT.jar");
+            URL mutualDependency = new URL(new URL("file://"), "./mutural-dependency/target/mutual-dependency-1.0-SNAPSHOT.jar");
 
             URL urlV0shade = new URL(new URL("file:"), "./sample-client-v0/target/original-sample-client-v0-1.0-SNAPSHOT.jar");
             URL urlV1shade = new URL(new URL("file:"), "./sample-client-v1/target/original-sample-client-v1-1.0-SNAPSHOT.jar");
 
-            classLoaderV0 = URLClassLoader.newInstance(new URL[] { urlV0, muturalDependency });
-            classLoaderV1 = URLClassLoader.newInstance(new URL[] { urlV1, muturalDependency });
+            classLoaderV0 = URLClassLoader.newInstance(new URL[] { urlV0, mutualDependency });
+            classLoaderV1 = URLClassLoader.newInstance(new URL[] { urlV1, mutualDependency });
 
             classLoaderV0shade = URLClassLoader.newInstance(new URL[] { urlV0shade });
             classLoaderV1shade = URLClassLoader.newInstance(new URL[] { urlV1shade });

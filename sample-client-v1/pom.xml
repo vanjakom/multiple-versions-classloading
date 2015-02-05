@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>com.mungolab.playground</groupId>
-            <artifactId>mutural-dependency</artifactId>
+            <artifactId>mutual-dependency</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

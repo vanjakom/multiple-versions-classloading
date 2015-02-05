@@ -13,7 +13,7 @@
         <module>sample-client-v1</module>
         <module>core</module>
         <module>console</module>
-        <module>mutural-dependency</module>
+        <module>mutual-dependency</module>
     </modules>
 
 

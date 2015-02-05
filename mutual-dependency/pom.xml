@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mutural-dependency</artifactId>
+    <artifactId>mutual-dependency</artifactId>
 
 
 </project>
