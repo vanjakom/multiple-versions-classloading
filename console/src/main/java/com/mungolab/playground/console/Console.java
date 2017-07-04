@@ -19,10 +19,10 @@ public class Console {
         try {
             URL urlV0 = new URL(new URL("file:"), "./sample-client-v0/target/sample-client-v0-1.0-SNAPSHOT.jar");
             URL urlV1 = new URL(new URL("file:"), "./sample-client-v1/target/sample-client-v1-1.0-SNAPSHOT.jar");
-            URL mutualDependency = new URL(new URL("file://"), "./mutural-dependency/target/mutual-dependency-1.0-SNAPSHOT.jar");
+            URL mutualDependency = new URL(new URL("file:"), "./mutual-dependency/target/mutual-dependency-1.0-SNAPSHOT.jar");
 
-            URL urlV0shade = new URL(new URL("file:"), "./sample-client-v0/target/original-sample-client-v0-1.0-SNAPSHOT.jar");
-            URL urlV1shade = new URL(new URL("file:"), "./sample-client-v1/target/original-sample-client-v1-1.0-SNAPSHOT.jar");
+            URL urlV0shade = new URL(new URL("file:"), "./sample-client-v0/target/sample-client-v0-1.0-SNAPSHOT-shaded.jar");
+            URL urlV1shade = new URL(new URL("file:"), "./sample-client-v1/target/sample-client-v1-1.0-SNAPSHOT-shaded.jar");
 
             classLoaderV0 = URLClassLoader.newInstance(new URL[] { urlV0, mutualDependency });
             classLoaderV1 = URLClassLoader.newInstance(new URL[] { urlV1, mutualDependency });
@@ -64,7 +64,8 @@ public class Console {
             System.out.println("Client V0shade version: " + clientV0shade.getVersion());
             System.out.println("Client V1shade version: " + clientV1shade.getVersion());
         } catch (Throwable e) {
-            System.out.println("Shade uber jars not working");
+            System.out.println("Shade uber jars not working\n");
+            e.printStackTrace();
         }
 
         System.out.println("ClassLoaders created");
